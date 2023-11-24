@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: whitesmoke">
+    <nav class="navbar navbar-expand-lg bg-body-whitesmoke">
+      <div class="container-fluid">
+        <a class="btn btn-outline-secondary" type="button" href="/">Go Back</a>
+      </div>
+    </nav>
+    <div
+      class="title"
+      style="
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        font-size: 70px;
+        margin-top: 40px;
+      "
+    >
+      ADDRESS BOOK
+    </div>
+    <div
+      class="title"
+      style="
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        font-size: 30px;
+        margin-top: 10px;
+      "
+    >
+      Registration Form
+    </div>
+    <div class="head" style="padding: 40px">
+      <div class="container" style="border-radius: 20px; border-color: black">
+        <form class="row g-3" method="post" name="myform" action="{{ url_for('register') }}">
+          {% if message is defined and message %}
+          <div class="alert alert-warning">{{ message }}</div>
+          {% endif %}
+          <div class="col-md-4">
+            <label for="Name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Name"
+              name="Name"
+              
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="email_id" class="form-label">Email Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email_id"
+              name="email_id"
+              
+            />
+          </div>
+          <div class="col-md-2">
+            <label for="gender" class="form-label">Gender</label><br />
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="male"
+                value="Male"
+              />
+              <label class="form-check-label" for="gender">Male</label>
+            </div>
+            &nbsp;&nbsp;
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="female"
+                value="Female"
+              />
+              <label class="form-check-label" for="gender">Female</label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <label for="age" class="form-label">Age</label>
+            <input
+              type="text"
+              class="form-control"
+              id="age"
+              name="age"
+              
+            />
+          </div>
+          <div class="col-md-3">
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone_number"
+              name="phone_number"
+              
+            />
+          </div>
+          <div class="col-md-2">
+            <label for="state" class="form-label">State</label>
+            <select class="form-select" id="state" name="state">
+              <option selected disabled value="">Choose...</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chattisgarh">Chattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujrat">Gujrat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkand">Jharkand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharastra">Maharastra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="New Delhi">New Delhi</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="username" class="form-label">Username</label>
+            <div class="input-group">
+              <span class="input-group-text" id="inputGroupPrepend2">@</span>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                aria-describedby="inputGroupPrepend2"
+                
+              />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              
+            />
+          </div>
+          
+          <div class="col-12">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="checkbox"
+                name="checkbox"
+              />
+              <label class="form-check-label" for="checkbox">
+                Agree to terms and conditions
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-outline-primary" type="submit" onclick="verify()">
+              Submit form
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function verify(){
+      var name=myform.Name.value;
+      var mail=myform.email_id.value;
+      var gender=myform.gender.value;
+      var age=myform.age.value;
+      var phone=myform.phone_number.value;
+      var user=myform.username.value;
+      var password=myform.password.value;
+      var state=myform.state.value;
+      var checkbox=myform.checkbox.value;
+
+      if (name !=""){
+		    if(name.match(/^[ a-zA-Z\-\’]+$/)  && name[0] != " " && name.charAt(name.length - 1) != ""){
+          if (mail !=""){
+				    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
+              if (gender != ""){
+                if (age != "" && parseInt(age) > 0){
+                  if (phone != ""){
+                    if (phone.length==10 && (phone[0]==9 || phone[0]==8 || phone[0]==7 || phone[0]==6) && !phone.match(/\s/)){
+                      if (state != ""){
+                        if (user != ""){
+                          if (user.match(/^[a-zA-Z0-9_]+$/)){
+                            if (password != ""){
+                              if (password.length > 6){
+                                if (password.match(/\w/)&&password.match(/\W/)){
+                                  alert("VALID RESPONSE")	
+                                }
+                                else{
+                                  alert("PASSWORD MUST CONTAIN ATLEAST ONE NUMBER AND ONE SPECIAL CHARACTER");
+                                  event.preventDefault();
+															  }
+                              }
+                              else{
+                                alert("ENTER PASSWORD MORE THAN 6 CHARACTERS")
+                                event.preventDefault();
+                              }
+                            }
+                            else{
+                              alert("ENTER PASSWORD")
+                              event.preventDefault();
+                            }
+                          }
+                          else{
+                            alert("ENTER VALID USERNAME");
+                            event.preventDefault();
+                          }
+                        }
+                        else{
+                          alert("ENTER USERNAME");
+                          event.preventDefault();
+                        }
+                      }
+                      else{
+                        alert("SELECT STATE");
+                        event.preventDefault();
+                      }
+                    }
+                    else{
+                      alert("ENTER VALID PHONE NUMBER");
+                      event.preventDefault();
+                    }
+                  }
+                  else{
+                    alert("ENTER PHONE NUMBER");
+                    event.preventDefault();
+                  }
+                }
+                else{
+                  alert("ENTER AGE");
+                  event.preventDefault();
+                }
+              }
+              else{
+                alert("SELECT GENDER");
+                event.preventDefault();
+              }
+            }
+            else{
+              alert("ENTER VALID EMAIL");
+              event.preventDefault();
+            }
+          }
+          else{
+            alert("ENTER EMAIL");
+            event.preventDefault();
+          }
+        }
+        else{
+          alert("ENTER VALID NAME");
+          event.preventDefault();
+        }
+      }
+      else{
+        alert("ENTER NAME");
+        event.preventDefault();
+      }
+    }
+  </script>
+</html>
