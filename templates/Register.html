@@ -221,7 +221,13 @@
                             if (password != ""){
                               if (password.length > 6){
                                 if (password.match(/\w/)&&password.match(/\W/)){
-                                  alert("VALID RESPONSE")	
+                                  if (checkbox.checked){
+                                    alert("VALID RESPONSE");
+                                  }
+                                  else{
+                                    alert("AGREE TO THE TERMS AND CONDITIONS");
+                                    event.preventDefault();
+                                  }
                                 }
                                 else{
                                   alert("PASSWORD MUST CONTAIN ATLEAST ONE NUMBER AND ONE SPECIAL CHARACTER");
