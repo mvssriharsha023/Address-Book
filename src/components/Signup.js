@@ -64,7 +64,7 @@ const Signup = () => {
 
   return (
     <>
-    <Link to="/login" type="submit" className="btn btn-outline-dark my-3 mx-3 btn-lg visible">
+    <Link to="/" type="submit" className="btn btn-outline-dark my-3 mx-3 btn-lg visible">
           Go Back
         </Link>
       <h1 className="container my-3">Address Book - Sign Up</h1>
